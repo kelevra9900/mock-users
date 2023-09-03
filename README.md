@@ -71,6 +71,12 @@ yarn test
 
 In summary, React Query simplifies data management, improves the user experience, and makes it easier to maintain a consistent and efficient application. It's a valuable addition to any React Native project, especially when dealing with complex data fetching requirements.
 
+## Check out the App
+
+| User List | User Detail |
+|-----------|----------------|
+| ![](https://github.com/kelevra9900/mock-users/blob/main/screenshots/users1.png) | ![](https://github.com/kelevra9900/mock-users/blob/main/screenshots/user-detail.png) |
+
 ## Contributions
 
 Contributions are welcome! If you'd like to contribute to this project, follow these steps:
