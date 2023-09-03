@@ -75,7 +75,7 @@ In summary, React Query simplifies data management, improves the user experience
 
 | User List | User Detail |
 |-----------|----------------|
-| ![](https://github.com/kelevra9900/mock-users/blob/main/screenshots/users1.png) | ![](https://github.com/kelevra9900/mock-users/blob/main/screenshots/user-detail.png) |
+| ![](https://github.com/kelevra9900/mock-users/blob/main/assets/screenshots/users1.png) | ![](https://github.com/kelevra9900/mock-users/blob/main/assets/screenshots/user-detail.png) |
 
 ## Contributions
 
