@@ -20,6 +20,7 @@ const UserDetail = memo(() => {
       <StatusBar backgroundColor={colors.gray} />
       <View style={{ width: '100%' }}>
         <Image
+          testID="user-background"
           source={{ uri: user.avatar }}
           resizeMode="cover"
           style={{
@@ -31,6 +32,7 @@ const UserDetail = memo(() => {
 
       <View style={{ flex: 1, alignItems: 'center' }}>
         <Image
+          testID="user-avatar"
           source={{ uri: user.avatar }}
           resizeMode="contain"
           style={{
