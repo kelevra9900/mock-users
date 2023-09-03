@@ -22,13 +22,13 @@ Before you begin working on this project, make sure you have the following prere
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/react-native-user-list-app.git
+   git clone https://github.com/kelevra9900/mock-users
    ```
 
 2. Navigate to the project folder:
 
    ```bash
-   cd react-native-user-list-app
+   cd mock-users
    ```
 
 3. Install project dependencies using Yarn:
