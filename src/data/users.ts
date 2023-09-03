@@ -38,7 +38,6 @@ export const useUserInfinityQuery = (query: QueryOptions) => {
 		  fetchNextPage();
 		}
 	}
-
 	return {
 		users: data?.pages?.flatMap((page) => page.data) ?? [],
 		loading: isLoading,

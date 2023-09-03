@@ -1,22 +1,26 @@
-import {View, Text, FlatList} from "react-native";
+import {View,Text,FlatList, StyleSheet} from "react-native";
+import type {NativeStackScreenProps} from "@react-navigation/native-stack";
+
+
 import {useUserInfinityQuery} from "../data/users";
-import {useCallback, useState} from "react";
 import LoaderComponent from "@components/ui/loader";
 import UserItem from "@components/home/userItem";
+import colors from "@utils/colors";
+import {RootStackParamList} from "../types/routes";
 
-
-const HomeScreen = () => {
-	const { users, loading, error, handleLoadMore } = useUserInfinityQuery({
+type Props = NativeStackScreenProps<RootStackParamList,'Home','MyStack'>;
+const HomeScreen = ({navigation}: Props) => {
+	const {users,loading,error,handleLoadMore} = useUserInfinityQuery({
 		page: 1,
 		per_page: 10,
 	});
-	
 
-	if(loading) {
+
+	if (loading) {
 		return <LoaderComponent text="Loading users, please wait..." />
 	}
-	
-	if(error){
+
+	if (error) {
 		return <Text>Error</Text>
 	}
 
@@ -24,13 +28,19 @@ const HomeScreen = () => {
 		handleLoadMore();
 	}
 
-	return(
-		<View style={{ flex: 1, margin: 10 }}>
+
+	return (
+		<View style={{flex: 1, backgroundColor: colors.white}}>
+			<View style={styles.top}>
+				<Text style={styles.title}>
+					Users
+				</Text>
+			</View>
 			<FlatList
-				contentContainerStyle={{ flexGrow: 1 }}
+				contentContainerStyle={{flexGrow: 1}}
 				data={users}
-				renderItem={({ item, index }) => (
-					<UserItem key={`user-${index}`} user={item} />
+				renderItem={({item,index}) => (
+					<UserItem key={`user-${index}`} user={item} navigation={navigation} />
 				)}
 				onEndReached={fetchMoreData}
 				onEndReachedThreshold={0.3}
@@ -38,6 +48,17 @@ const HomeScreen = () => {
 		</View>
 	);
 }
+
+const styles = StyleSheet.create({
+	top: {
+		margin: 10
+	},
+	title: {
+		marginTop: 10,
+		fontWeight: 'bold',
+		fontSize: 32
+	}
+});
 
 
 export default HomeScreen;

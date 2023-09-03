@@ -1,9 +1,10 @@
-export interface QueryOptions {
+export type QueryOptions = {
     page?: number;
     per_page?: number;
+    search?: string;
 }
 
-export interface Users {
+export type Users = {
     page: number;
     per_page: number;
     total: number;
@@ -13,7 +14,7 @@ export interface Users {
 }
 
 
-export interface User {
+export type User = {
     id: number;
     email: string;
     first_name: string;
@@ -21,7 +22,7 @@ export interface User {
     avatar: string;
 }
 
-export interface Support {
+export type Support = {
     url: string;
     text: string;
 }

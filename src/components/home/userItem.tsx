@@ -1,12 +1,19 @@
+import type {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import {View,StyleSheet,Image,Text,TouchableOpacity} from "react-native";
 
+import {RootStackParamList} from "../../types/routes";
 import {User} from "../../types/user";
 
-const UserItem = ({user}: {user: User}) => {
+type Props = {
+	user: User;
+	navigation?: NativeStackNavigationProp<RootStackParamList, "Home", "MyStack">;
+}
+
+const UserItem = ({user, navigation}: Props) => {
 	return (
 		<TouchableOpacity
 			onPress={() => {
-				// Navega a la pantalla de detalles del usuario
+				navigation?.navigate('Profile', { user });
 			}}>
 			<View style={styles.container}>
 				<Image source={{uri: user.avatar}} style={styles.avatar} />
