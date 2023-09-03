@@ -1,6 +1,6 @@
 import { useRoute } from '@react-navigation/native'
 import { memo } from 'react'
-import { View, Text, SafeAreaView, StatusBar, Image } from 'react-native'
+import { View, Text, SafeAreaView, StatusBar, Image, StyleSheet } from 'react-native'
 
 import colors from '@utils/colors'
 
@@ -11,22 +11,14 @@ const UserDetail = memo(() => {
   const { user } = params as { user: User }
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: colors.white
-      }}
-    >
+    <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={colors.gray} />
       <View style={{ width: '100%' }}>
         <Image
           testID="user-background"
           source={{ uri: user.avatar }}
           resizeMode="cover"
-          style={{
-            height: 228,
-            width: '100%'
-          }}
+          style={styles.backgroundAvatar}
         />
       </View>
 
@@ -35,34 +27,42 @@ const UserDetail = memo(() => {
           testID="user-avatar"
           source={{ uri: user.avatar }}
           resizeMode="contain"
-          style={{
-            height: 155,
-            width: 155,
-            borderRadius: 999,
-            borderColor: colors.primaryColor,
-            borderWidth: 2,
-            marginTop: -90
-          }}
+          style={styles.avatar}
         />
 
-        <Text
-          style={{
-            color: colors.primaryColor,
-            marginVertical: 8
-          }}
-        >
+        <Text style={styles.name}>
           {user.first_name} {user.last_name}
         </Text>
-        <Text
-          style={{
-            color: colors.black
-          }}
-        >
-          {user.email}
-        </Text>
+        <Text style={styles.email}>{user.email}</Text>
       </View>
     </SafeAreaView>
   )
+})
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white
+  },
+  backgroundAvatar: {
+    height: 228,
+    width: '100%'
+  },
+  avatar: {
+    height: 155,
+    width: 155,
+    borderRadius: 999,
+    borderColor: colors.primaryColor,
+    borderWidth: 2,
+    marginTop: -90
+  },
+  name: {
+    color: colors.primaryColor,
+    marginVertical: 8
+  },
+  email: {
+    color: colors.black
+  }
 })
 
 export default UserDetail

@@ -28,7 +28,7 @@ const HomeScreen = ({ navigation }: Props) => {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.white }}>
+    <View style={styles.content}>
       <View style={styles.top}>
         <Text style={styles.title}>Users</Text>
       </View>
@@ -46,6 +46,10 @@ const HomeScreen = ({ navigation }: Props) => {
 }
 
 const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    backgroundColor: colors.white
+  },
   top: {
     margin: 10
   },

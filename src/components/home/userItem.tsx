@@ -1,6 +1,8 @@
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native'
 
+import colors from '@utils/colors'
+
 import { RootStackParamList } from '../../types/routes'
 import { User } from '../../types/user'
 
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
+    borderBottomColor: colors.gray
   },
   avatar: {
     width: 50,
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
   },
   email: {
     fontSize: 16,
-    color: '#777'
+    color: colors.black1
   }
 })
 
