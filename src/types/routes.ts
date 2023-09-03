@@ -1,7 +1,7 @@
-import {User} from "./user";
+import { User } from './user'
 
 export type RootStackParamList = {
-	Splash: undefined;
-	Home: undefined;
-	Profile: { user: User };
-};
+  Splash: undefined
+  Home: undefined
+  Profile: { user: User }
+}
